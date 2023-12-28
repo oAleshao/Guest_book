@@ -97,20 +97,21 @@ namespace Guest_book.Controllers
         // POST: Students/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,message,UserId")] Message message)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,message,UserId")] Message EditMessage)
         {
-            if (id != message.Id)
+            if (id != EditMessage.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+			EditMessage.user = await repo.GetUserById(EditMessage.UserId);
+
+			if (ModelState.IsValid)
             {
                 try
                 {
-                    message.time = DateTime.Now;
-                    message.user = await repo.GetUserById(message.UserId);
-                    repo.UpdateMessage(message);
+					EditMessage.time = DateTime.Now;
+                    repo.UpdateMessage(EditMessage);
                     await repo.Save();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -118,7 +119,7 @@ namespace Guest_book.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(message);
+            return View(EditMessage);
         }
 
         private async Task<bool> MessageExists(int id)

@@ -17,10 +17,10 @@
 	</div>
 </header>
 
-<div id="AddMessagePage">
+<div id="EditMessagePage">
 	<form asp-action="Edit" asp-controller="Messages">
 		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-		<input asp-for="Id" value="@Model.Id" type="text" />
+		<input asp-for="Id" value="@Model.Id" type="hidden" />
 		<div class="form-group">
 			<label asp-for="message" class="control-label">Ваш отзыв</label>
 			<textarea asp-for="message" class="form-control"></textarea>
@@ -31,6 +31,7 @@
 		</div>
 		<div class="form-group">
 			<input type="submit" value="Изменить" />
+			<a asp-action="Delete" asp-route-id="@Model.Id">Удалить</a>
 		</div>
 	</form>
 
