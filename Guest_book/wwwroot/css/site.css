@@ -1,0 +1,314 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+a{
+    transition: 0.2s;
+}
+
+#mainHeader div a:nth-child(2){
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0px 0px 0px 0px ;
+}
+
+a:hover {
+    color: #a8a7a7;
+    transition: 0.2s;
+}
+
+body {
+    background: #9db0ce;
+}
+
+#mainHeader {
+    display: flex;
+    width: 100%;
+    height: 8vh;
+    background: #535878;
+    padding: 15px;
+    padding-left: 70px;
+}
+
+#mainHeader div:nth-child(1){
+    width: 76%;
+}
+
+#mainHeader a {
+    color: white;
+    font-size: 25px;
+}
+
+#boxLogAndReg{
+    width: 24%;
+}
+
+#boxLogAndReg ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#boxLogAndReg ul li{
+    list-style: none;
+}
+
+#boxLogAndReg ul li a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0px 30px 0px 0px;
+}
+
+#boxLogAndReg ul li h1{
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px 30px 0px 0px;
+}
+
+#headerLogin {
+    width: 100%;
+    height: 8vh;
+    background: #535878;
+    padding: 15px;
+    padding-left: 70px;
+}
+
+#headerLogin a{
+    color: white;
+    list-style: none;
+    font-size: 25px;
+}
+
+#formLogIn {
+    width: 25%;
+    margin: 2% auto;
+    padding: 15px;
+    background: #535878;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#formReg {
+    width: 25%;
+    margin: 2% auto;
+    padding: 15px;
+    background: #535878;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#formLogIn form label, #formReg form label{
+    margin: 5px 0px 0px 40px;
+    color: white;
+    width: 300px;
+}
+
+#formLogIn div ul li {
+    color: #ed1515;
+}
+
+#formLogIn form input, #formReg form input{
+    width: 300px;
+    margin: 0px 0px 0px 40px;
+
+}
+
+#formLogIn form span, #formReg form span{
+    width: 300px;
+    margin: 0px 0px 0px 20px;
+    color: #ed1515;
+}
+
+
+#loginAndLogInLikeGuest {
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 0px 20px;
+    width: 290px;
+}
+
+#loginAndLogInLikeGuest a{
+    margin: 0px 0px 0px 20px;
+    text-decoration: none;
+    padding: 0px 0px 0px 12px;
+}
+
+#btnSubmit {
+    background: #3982d1;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    transition: 0.2s;
+}
+
+#btnSubmit:hover {
+    background: #2f5e92;
+    transition: 0.2s;
+    color: #a8a7a7;
+}
+
+#regBtn{
+    margin: 10px 0px 0px 85px;
+    text-align: center;
+    width: 200px;
+}
+
+#regBtn a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+
+#regBtn a:hover{
+    color: #a8a7a7;
+    transition: 0.2s;
+}
+
+
+
+#formReg form div:nth-child(6) {
+    border: 0px;
+    margin: 0px 0px 0px 60px;
+}
+
+#regBtnSumbmit {
+    background: #3982d1;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    transition: 0.2s;
+}
+
+#regBtnSumbmit:hover {
+    background: #2f5e92;
+    transition: 0.2s;
+    color: #a8a7a7;
+}
+
+
+#headerHome {
+    width: 100%;
+    height: 8vh;
+    background: #535878;
+    padding: 15px;
+    padding-left: 70px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#headerHome div a {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+#headerHome div:nth-child(1) {
+    flex-basis: 76%;
+}
+
+
+#headerHome div:nth-child(2) {
+    flex-basis: 24%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#headerHome div:nth-child(2) a{
+    font-size: 20px;
+}
+
+#headerHome h1, #NameUserActive{
+    font-size: 20px;
+    color: white;
+    padding: 5px 0px 0px 0px;
+}
+
+#AddMessagePage{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5% 0% 0% 0%;
+}
+
+#AddMessagePage form div label {
+    font-size: 20px;
+    color:white;
+}
+
+#AddMessagePage form div textarea{
+    width: 500px;
+    height: 300px;  
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 1px;
+}
+
+
+#AddMessagePage form div input {
+    width: 100px;
+    background: #3982d1;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+    transition: 0.2s;
+    margin: 10px 0px 0px 380px;
+}
+
+#AddMessagePage form div input:hover {
+    background: #2f5e92;
+    transition: 0.2s;
+    color: #a8a7a7;
+}
+
+#UserMessage {
+    width: 80%;
+    margin: 2% auto;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    background: #535878;
+}
+
+#UserMessage div h2{
+    padding: 8px 0px 0px 10px;
+    color: white;
+    font-size: 20px;
+
+}
+
+#UserMessage div:nth-child(2) p{
+    color: white;
+    font-size: 16px;
+    padding: 8px 0px 0px 15px;
+}
+
+#UserMessage div:nth-child(3) p{
+    color: white;
+    font-size: 16px;
+    padding: 8px 15px 0px 0px;
+    text-align: right;
+}
+
+#UserMessage div:nth-child(3){
+    margin: 10px;
+    align-content: revert;
+}
+
+#EditBtn {
+    background: #13b739;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+}

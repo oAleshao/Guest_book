@@ -1,0 +1,68 @@
+﻿@model Guest_book.Models.ActiveUserModel
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<header id="mainHeader">
+	<div>
+		<a class="navbar-brand" asp-area="" asp-controller="Messages" asp-action="Index" >Главная</a>
+		@if (Model.user != null)
+		{
+			<a asp-area="" asp-controller="Account" asp-action="Home">Добавить</a>
+		}
+	</div>
+	<div id="boxLogAndReg">
+		<ul>
+			<li>
+				@if (Model.user != null)
+				{
+					<h1 id="NameUserActive">@Model.user.FirstName @Model.user.LastName</h1>
+				}
+				else
+				{
+					<a asp-area="" asp-controller="Account" asp-action="Login">Вход</a>
+				}
+			</li>
+			<li>
+				@if (Model.user != null)
+				{
+					<a asp-area="" asp-controller="Account" asp-action="Login">Выход</a>
+				}
+				else
+				{
+					<a asp-area="" asp-controller="Account" asp-action="Register">Регистрация</a>
+				}
+			</li>
+		</ul>
+	</div>
+
+</header>
+
+
+
+
+@foreach (var item in Model.messages)
+{
+	<div id="UserMessage">
+		<div>
+			<h2>@item.user.FirstName @item.user.LastName</h2>
+		</div>
+		<div>
+			<p>@item.message</p>
+		</div>
+		<div>
+			<p>@item.time.ToString()</p>
+			@if (Model.user != null && Model.user.Id == item.UserId)
+			{
+				<a asp-action="Edit" asp-route-id="@item.Id" id="EditBtn">Изменить</a>
+			}
+		</div>
+	</div>
+}
+
+@*
+
+<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+<a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+

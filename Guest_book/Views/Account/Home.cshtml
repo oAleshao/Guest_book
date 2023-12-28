@@ -1,0 +1,34 @@
+﻿@model Guest_book.Models.Message
+
+@{
+	ViewBag.Title = "Home";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header id="headerHome">
+	<div>
+		<a class="navbar-brand" asp-area="" asp-controller="Messages" asp-action="Index">Главная</a>
+	</div>
+	<div>
+		<h1>@Model.user.FirstName @Model.user.LastName</h1>
+		<a asp-controller="Account" asp-action="Login">Выйти</a>
+	</div>
+</header>
+
+<div id="AddMessagePage">
+	<form asp-action="Create" asp-controller="Messages">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<div class="form-group">
+			<label asp-for="message" class="control-label">Ваш отзыв</label>
+			<textarea asp-for="message" class="form-control"></textarea>
+			<span asp-validation-for="message" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<input asp-for="UserId" value="@Model.user.Id" type="hidden"/>
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Добавить" />
+		</div>
+	</form>
+
+</div>
